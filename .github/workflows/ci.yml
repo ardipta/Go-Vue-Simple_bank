@@ -37,9 +37,10 @@ jobs:
         go-version: 1.19
 
     - name: install scoop
-      run: |
-      Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-      irm get.scoop.sh | iex
+      run: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+    - name: set scoop
+      run: irm get.scoop.sh | iex
 
     - name: Install golang migrate
       run: scoop install migrate
