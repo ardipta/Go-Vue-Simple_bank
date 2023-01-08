@@ -34,7 +34,7 @@ jobs:
         go-version: 1.19
     
     - name: Run migrations
-      run: make migrateup
+      run: migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
     - name: Test
       run: go test -v -cover ./...
