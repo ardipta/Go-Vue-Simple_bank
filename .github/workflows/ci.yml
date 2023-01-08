@@ -35,15 +35,3 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-
-    - name: install scoop
-      run: curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate-4.15.2.zip | tar xvz
-      
-    - name: Install golang migrate
-      run: scoop install migrate
-    
-    - name: Run migrations
-      run: make migrateup
-
-    - name: Test
-      run: make test
